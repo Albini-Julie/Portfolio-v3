@@ -1,12 +1,5 @@
 <template>
   <div>
-    <h1 class="titre">Bonjour</h1>
-    <NuxtWelcome />
+    <NuxtPage />
   </div>
 </template>
-
-<style lang="scss" scoped>
-.titre {
-  color: red;
-}
-</style>

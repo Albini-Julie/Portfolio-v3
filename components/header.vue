@@ -14,6 +14,9 @@
   @include large-up {
     padding: rem(50) rem(60);
   }
+  @include x-large-up {
+    padding: rem(0) rem(60);
+  }
   &__annee {
     font-family: $primary-font-family;
     font-size: $medium-font-size;

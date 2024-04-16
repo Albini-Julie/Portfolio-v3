@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h2 class="header__annee">{{ menu.data.annee[0].text }}</h2>
+    <h2 class="header__annee">{{ annee }}</h2>
     <IconsHome v-if="home" class="icons" />
   </div>
 </template>
@@ -37,12 +37,6 @@
 <script setup>
 defineProps({
   home: Boolean,
+  annee: String,
 });
-
-// Appel du client usePrismic pour avoir accès aux données de la single page menu
-const { client } = usePrismic();
-const { data: menu, error } = await useAsyncData("menu", () =>
-  client.getSingle("menu")
-);
-console.log(menu);
 </script>

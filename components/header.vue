@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <h2 class="header__annee">{{ annee }}</h2>
-    <IconsHome v-if="home" class="icons" />
+    <NuxtLink to="/">
+      <IconsHome v-if="home" class="icons" />
+    </NuxtLink>
   </div>
 </template>
 
@@ -15,7 +17,7 @@
     padding: rem(50) rem(60);
   }
   @include x-large-up {
-    padding: rem(0) rem(60);
+    padding: rem(50) rem(60);
   }
   &__annee {
     font-family: $primary-font-family;

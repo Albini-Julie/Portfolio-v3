@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <Header />
+    <Header :annee="index.data.annee[0].text" />
     <div class="index__julieBlock">
       <h1 class="index__titre">{{ index.data.titre_1[0].text }}</h1>
       <Liens

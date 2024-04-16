@@ -3,7 +3,7 @@
     <img class="projet__img" src="/plage.jpg" />
     <div class="projet__contentBlock">
       <div class="projet__content">
-        <Header home annee="2023" />
+        <Header home :color="colorText" annee="2023" />
         <h2 class="projet__titre">Développement front</h2>
         <p class="projet__texte">
           Le Lorem Ipsum est simplement du faux texte employé dans la
@@ -11,21 +11,45 @@
         </p>
         <div class="projet__voir">
           <p class="projet__voirTexte">voir le projet</p>
-          <IconsFleche-cercle />
+          <IconsFleche-cercle :color="colorText" />
         </div>
         <div class="projet__fleches">
-          <IconsFleche-gauche />
-          <IconsFleche-droite />
+          <IconsFleche-gauche :color="colorText" @click="prevSlide" />
+          <IconsFleche-droite :color="colorText" @click="nextSlide" />
         </div>
       </div>
     </div>
   </div>
 </template>
 
+<script setup>
+defineProps({
+  color: String,
+  colorText: String,
+});
+
+import { slide } from "~/config";
+const prevSlide = () => {
+  slide.value -= 1;
+  if (slide.value === -1) {
+    console.log(slide.value);
+    slide.value = 3;
+  }
+};
+const nextSlide = () => {
+  slide.value += 1;
+  if (slide.value == 4) {
+    console.log(slide.value);
+    slide.value = 0;
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 .projet {
   @include large-up {
     display: flex;
+
     height: 100vh;
   }
 
@@ -38,6 +62,7 @@
     }
   }
   &__contentBlock {
+    background-color: v-bind(color);
     @include only-medium {
       display: flex;
       flex-direction: column;
@@ -47,6 +72,7 @@
   &__content {
     height: 50vh;
     margin: rem(0) rem(30);
+
     @include medium-up {
       width: 65%;
     }
@@ -63,6 +89,7 @@
     font-family: $secondary-font-family;
     font-size: $medium-font-size;
     margin-top: 0px;
+    color: v-bind(colorText);
     @include x-large-up {
       font-size: $big-font-size;
     }
@@ -71,6 +98,7 @@
     font-size: $small-font-size;
     font-family: $primary-font-family;
     margin-top: 0px;
+    color: v-bind(colorText);
     @include large-up {
       width: 80%;
     }
@@ -92,6 +120,7 @@
     font-size: $regular-font-size;
     text-transform: uppercase;
     font-family: $primary-font-family;
+    color: v-bind(colorText);
     @include x-large-up {
       font-size: rem(25);
     }
@@ -109,5 +138,3 @@
   }
 }
 </style>
-
-<script setup></script>

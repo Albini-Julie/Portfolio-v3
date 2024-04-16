@@ -2,7 +2,7 @@
   <div class="header">
     <h2 class="header__annee">{{ annee }}</h2>
     <NuxtLink to="/">
-      <IconsHome v-if="home" class="icons" />
+      <IconsHome v-if="home" class="icons" :color="color" />
     </NuxtLink>
   </div>
 </template>
@@ -23,6 +23,7 @@
     font-family: $primary-font-family;
     font-size: $medium-font-size;
     font-weight: 500;
+    color: v-bind(color);
     @include large-up {
       font-size: $big-font-size;
     }
@@ -40,5 +41,6 @@
 defineProps({
   home: Boolean,
   annee: String,
+  color: String,
 });
 </script>

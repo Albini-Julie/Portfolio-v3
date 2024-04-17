@@ -1,34 +1,54 @@
 <template>
   <div class="caroussel">
     <div class="slides">
-      <Projet
-        :style="{ zIndex: slide === 0 ? 50 : 1 }"
-        color="#FFD700"
-        colorText="#000000"
-        v-if="slide === 0"
-        :class="{ 'slide-animation-1': slide === 0 }"
-      />
-      <Projet
-        :style="{ zIndex: slide === 1 ? 50 : 1 }"
-        color="#105A13"
-        colorText="#FFFFFF"
-        v-if="slide === 1"
-        :class="{ 'slide-animation-2': slide === 1 }"
-      />
-      <Projet
-        :style="{ zIndex: slide === 2 ? 50 : 1 }"
-        color="#16105A"
-        colorText="#FFFFFF"
-        v-if="slide === 2"
-        :class="{ 'slide-animation-3': slide === 2 }"
-      />
-      <Projet
-        :style="{ zIndex: slide === 3 ? 50 : 1 }"
-        color="#970051"
-        colorText="#FFFFFF"
-        v-if="slide === 3"
-        :class="{ 'slide-animation-4': slide === 3 }"
-      />
+      <div style="background-color: #ffd700">
+        <Projet
+          :style="{ zIndex: slide === 0 ? 50 : 1 }"
+          color="#FFD700"
+          colorText="#000000"
+          v-if="slide === 0"
+          :class="{
+            'slide-animation': slide === 0 && anime,
+            'slide-animation-2': slide === 0 && anime === false,
+          }"
+        />
+      </div>
+      <div style="background-color: #105a13">
+        <Projet
+          :style="{ zIndex: slide === 1 ? 50 : 1 }"
+          color="#105A13"
+          colorText="#FFFFFF"
+          v-if="slide === 1"
+          :class="{
+            'slide-animation': slide === 1 && anime,
+            'slide-animation-2': slide === 1 && anime === false,
+          }"
+        />
+      </div>
+      <div style="background-color: #16105a">
+        <Projet
+          :style="{ zIndex: slide === 2 ? 50 : 1 }"
+          color="#16105A"
+          colorText="#FFFFFF"
+          v-if="slide === 2"
+          :class="{
+            'slide-animation': slide === 2 && anime,
+            'slide-animation-2': slide === 2 && anime === false,
+          }"
+        />
+      </div>
+      <div style="background-color: #970051">
+        <Projet
+          :style="{ zIndex: slide === 3 ? 50 : 1 }"
+          color="#970051"
+          colorText="#FFFFFF"
+          v-if="slide === 3"
+          :class="{
+            'slide-animation': slide === 3 && anime,
+            'slide-animation-2': slide === 3 && anime === false,
+          }"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -38,20 +58,12 @@
   height: 100vh;
 }
 
-.slide-animation-1 {
+.slide-animation {
   animation: slideFromLeft 0.5s ease-out forwards;
 }
 
 .slide-animation-2 {
-  animation: slideFromLeft 0.5s ease-out forwards;
-}
-
-.slide-animation-3 {
-  animation: slideFromLeft 0.5s ease-out forwards;
-}
-
-.slide-animation-4 {
-  animation: slideFromLeft 0.5s ease-out forwards;
+  animation: slideFromRight 0.5s ease-out forwards;
 }
 
 @keyframes slideFromTop {
@@ -101,17 +113,5 @@
 
 <script setup>
 import { ref } from "vue";
-import { slide } from "~/config";
-
-const BackColor = ref("");
-
-if (slide === 0) {
-  BackColor.value = "#FFD700";
-} else if (slide === 1) {
-  BackColor.value = "#105A13";
-} else if (slide === 2) {
-  BackColor.value = "#16105A";
-} else if (slide === 2) {
-  BackColor.value = "#16105A";
-}
+import { slide, anime } from "~/config";
 </script>

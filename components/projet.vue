@@ -3,14 +3,13 @@
     <img class="projet__img" src="/plage.jpg" />
     <div class="projet__contentBlock">
       <div class="projet__content">
-        <Header home :color="colorText" annee="2023" />
-        <h2 class="projet__titre">Développement front</h2>
+        <Header home :color="colorText" :annee="annee" />
+        <h2 class="projet__titre">{{ titre }}</h2>
         <p class="projet__texte">
-          Le Lorem Ipsum est simplement du faux texte employé dans la
-          composition et la mise en page avant impression.
+          {{ description }}
         </p>
         <div class="projet__voir">
-          <p class="projet__voirTexte">voir le projet</p>
+          <p class="projet__voirTexte">{{ voir }}</p>
           <IconsFleche-cercle :color="colorText" />
         </div>
         <div class="projet__fleches">
@@ -26,6 +25,10 @@
 defineProps({
   color: String,
   colorText: String,
+  annee: String,
+  titre: String,
+  description: String,
+  voir: String,
 });
 
 import { slide, anime } from "~/config";
@@ -51,7 +54,6 @@ const nextSlide = () => {
 .projet {
   @include large-up {
     display: flex;
-
     height: 100vh;
   }
 
@@ -131,7 +133,7 @@ const nextSlide = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: rem(30);
+    margin-top: rem(10);
     @include x-large-up {
       position: relative;
       left: 0;

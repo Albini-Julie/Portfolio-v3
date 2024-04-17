@@ -1,51 +1,22 @@
 <template>
   <div class="caroussel">
     <div class="slides">
-      <div style="background-color: #ffd700">
+      <div
+        v-for="(projet, index) in projets.data.projet_presentation"
+        class="projets"
+      >
         <Projet
-          :style="{ zIndex: slide === 0 ? 50 : 1 }"
-          color="#FFD700"
-          colorText="#000000"
-          v-if="slide === 0"
+          :style="{ zIndex: slide === index ? 50 : 1 }"
+          :color="projet.projet_color[0].text"
+          :colorText="projet.projet_colortext[0].text"
+          :annee="projet.projet_annee[0].text"
+          :titre="projet.projet_title[0].text"
+          :description="projet.projet_description[0].text"
+          :voir="projets.data.voir[0].text"
+          v-if="slide === index"
           :class="{
-            'slide-animation': slide === 0 && anime,
-            'slide-animation-2': slide === 0 && anime === false,
-          }"
-        />
-      </div>
-      <div style="background-color: #105a13">
-        <Projet
-          :style="{ zIndex: slide === 1 ? 50 : 1 }"
-          color="#105A13"
-          colorText="#FFFFFF"
-          v-if="slide === 1"
-          :class="{
-            'slide-animation': slide === 1 && anime,
-            'slide-animation-2': slide === 1 && anime === false,
-          }"
-        />
-      </div>
-      <div style="background-color: #16105a">
-        <Projet
-          :style="{ zIndex: slide === 2 ? 50 : 1 }"
-          color="#16105A"
-          colorText="#FFFFFF"
-          v-if="slide === 2"
-          :class="{
-            'slide-animation': slide === 2 && anime,
-            'slide-animation-2': slide === 2 && anime === false,
-          }"
-        />
-      </div>
-      <div style="background-color: #970051">
-        <Projet
-          :style="{ zIndex: slide === 3 ? 50 : 1 }"
-          color="#970051"
-          colorText="#FFFFFF"
-          v-if="slide === 3"
-          :class="{
-            'slide-animation': slide === 3 && anime,
-            'slide-animation-2': slide === 3 && anime === false,
+            'slide-animation': slide === index && anime,
+            'slide-animation-2': slide === index && anime === false,
           }"
         />
       </div>
@@ -54,6 +25,10 @@
 </template>
 
 <style lang="scss" scoped>
+.projets {
+  background-color: black;
+}
+
 .slides {
   height: 100vh;
 }
@@ -114,4 +89,11 @@
 <script setup>
 import { ref } from "vue";
 import { slide, anime } from "~/config";
+
+// Appel du client usePrismic pour avoir accès aux données de la single page menu
+const { client } = usePrismic();
+const { data: projets, error } = await useAsyncData("projets", () =>
+  client.getSingle("projets")
+);
+console.log(projets);
 </script>

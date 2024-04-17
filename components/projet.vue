@@ -28,15 +28,17 @@ defineProps({
   colorText: String,
 });
 
-import { slide } from "~/config";
+import { slide, anime } from "~/config";
 const prevSlide = () => {
   slide.value -= 1;
+  anime.value = false;
   if (slide.value === -1) {
     console.log(slide.value);
     slide.value = 3;
   }
 };
 const nextSlide = () => {
+  anime.value = true;
   slide.value += 1;
   if (slide.value == 4) {
     console.log(slide.value);

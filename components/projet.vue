@@ -8,12 +8,15 @@
         <p class="projet__texte">
           {{ description }}
         </p>
-        <RouterLink class="projet__lien" :to="href">
-          <div class="projet__voir">
+        <div class="projet__voir">
+          <RouterLink class="projet__lien" :to="href">
             <p class="projet__voirTexte">{{ voir }}</p>
+          </RouterLink>
+          <RouterLink class="projet__lien" :to="href">
             <IconsFleche-cercle :color="colorText" />
-          </div>
-        </RouterLink>
+          </RouterLink>
+        </div>
+
         <div class="projet__fleches">
           <IconsFleche-gauche
             class="projet__fleche"

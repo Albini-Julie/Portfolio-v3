@@ -1,6 +1,6 @@
 <template>
   <div class="projet">
-    <img class="projet__img" src="/plage.jpg" />
+    <img class="projet__img" :src="image" />
     <div class="projet__contentBlock">
       <div class="projet__content">
         <Header home :color="colorText" :annee="annee" />
@@ -29,6 +29,7 @@ defineProps({
   titre: String,
   description: String,
   voir: String,
+  image: String,
 });
 
 import { slide, anime } from "~/config";
@@ -61,7 +62,7 @@ const nextSlide = () => {
     height: 50vh;
     width: 100%;
     @include large-up {
-      width: 50%;
+      width: 30%;
       height: 100vh;
     }
   }
@@ -71,6 +72,10 @@ const nextSlide = () => {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    @include large-up {
+      width: 70%;
+      height: 100vh;
     }
   }
   &__content {

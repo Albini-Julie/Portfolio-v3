@@ -18,12 +18,12 @@
         </div>
 
         <div class="projet__fleches">
-          <IconsFleche-gauche
-            class="projet__fleche"
+          <IconsFleche-longue
+            class="projet__fleche --gauche"
             :color="colorText"
             @click="prevSlide"
           />
-          <IconsFleche-droite
+          <IconsFleche-longue
             class="projet__fleche"
             :color="colorText"
             @click="nextSlide"
@@ -163,6 +163,9 @@ const nextSlide = () => {
   }
   &__fleche {
     cursor: pointer;
+    &.--gauche {
+      transform: rotate(180deg);
+    }
   }
   &__lien {
     text-decoration: none;

@@ -13,6 +13,7 @@
           :titre="projet.projet_title[0].text"
           :description="projet.projet_description[0].text"
           :voir="projets.data.voir[0].text"
+          :image="projet.projet_image.url"
           v-if="slide === index"
           :class="{
             'slide-animation': slide === index && anime,

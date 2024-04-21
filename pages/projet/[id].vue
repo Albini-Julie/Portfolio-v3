@@ -19,22 +19,38 @@
 
 <style lang="scss" scoped>
 .intro {
+  @include large-up {
+    display: flex;
+  }
   &__img {
     height: 55vh;
     width: 100%;
+    @include large-up {
+      width: 50%;
+      height: 50vh;
+    }
   }
   &__content {
-    margin: rem(0) rem(30);
+    margin: rem(0) rem(60);
+    @include large-up {
+      width: 80%;
+    }
   }
   &__titre {
     font-family: $secondary-font-family;
     font-size: $medium-font-size;
     margin-top: 0px;
+    @include large-up {
+      font-size: $big-font-size;
+    }
   }
   &__texte {
     font-family: $primary-font-family;
     font-size: $small-font-size;
     font-weight: 300;
+    @include large-up {
+      font-size: $regular-font-size;
+    }
   }
   &__flecheBlock {
     display: flex;

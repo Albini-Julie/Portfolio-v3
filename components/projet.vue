@@ -8,13 +8,23 @@
         <p class="projet__texte">
           {{ description }}
         </p>
-        <div class="projet__voir">
-          <p class="projet__voirTexte">{{ voir }}</p>
-          <IconsFleche-cercle :color="colorText" />
-        </div>
+        <RouterLink class="projet__lien" :to="href">
+          <div class="projet__voir">
+            <p class="projet__voirTexte">{{ voir }}</p>
+            <IconsFleche-cercle :color="colorText" />
+          </div>
+        </RouterLink>
         <div class="projet__fleches">
-          <IconsFleche-gauche :color="colorText" @click="prevSlide" />
-          <IconsFleche-droite :color="colorText" @click="nextSlide" />
+          <IconsFleche-gauche
+            class="projet__fleche"
+            :color="colorText"
+            @click="prevSlide"
+          />
+          <IconsFleche-droite
+            class="projet__fleche"
+            :color="colorText"
+            @click="nextSlide"
+          />
         </div>
       </div>
     </div>
@@ -30,6 +40,7 @@ defineProps({
   description: String,
   voir: String,
   image: String,
+  href: String,
 });
 
 import { slide, anime } from "~/config";
@@ -130,6 +141,7 @@ const nextSlide = () => {
     text-transform: uppercase;
     font-family: $primary-font-family;
     color: v-bind(colorText);
+
     @include x-large-up {
       font-size: rem(25);
     }
@@ -139,11 +151,18 @@ const nextSlide = () => {
     justify-content: space-between;
     align-items: center;
     margin-top: rem(10);
+
     @include x-large-up {
       position: relative;
       left: 0;
       bottom: 0;
     }
+  }
+  &__fleche {
+    cursor: pointer;
+  }
+  &__lien {
+    text-decoration: none;
   }
 }
 </style>

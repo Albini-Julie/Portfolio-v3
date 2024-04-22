@@ -114,13 +114,17 @@
 
   <!--Boutons-->
   <div class="methode__boutons">
-    <Boutons texte="La maquette" />
-    <Boutons texte="Le site" />
+    <Boutons lien="https://www.youtube.com/" texte="La maquette" />
+    <Boutons lien="https://www.google.com/" texte="Le site" />
   </div>
   <div class="conclusion">
     <div class="conclusion__content">
-      <p class="conclusion__texte">voir d'autres projets</p>
-      <IconsFleche-cercle class="conclusion__icons" color="#000" />
+      <NuxtLink class="conclusion__lien" to="/projets">
+        <p class="conclusion__texte">voir d'autres projets</p>
+      </NuxtLink>
+      <NuxtLink class="conclusion__lien" to="/projets">
+        <IconsFleche-cercle class="conclusion__icons" color="#000" />
+      </NuxtLink>
     </div>
     <Footer />
   </div>
@@ -373,6 +377,7 @@
     font-size: $regular-font-size;
     text-transform: uppercase;
     font-weight: 500;
+    color: $secondary-color;
     @include large-up {
       font-weight: 400;
       font-size: rem(25);
@@ -394,6 +399,9 @@
       margin-bottom: rem(0);
       margin-top: rem(30);
     }
+  }
+  &__lien {
+    text-decoration: none;
   }
 }
 </style>

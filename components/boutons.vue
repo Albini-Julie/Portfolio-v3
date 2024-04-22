@@ -1,7 +1,9 @@
 <template>
-  <div class="boutons">
-    <p class="boutons__texte">{{ texte }}</p>
-  </div>
+  <a class="boutons__lien" :href="lien">
+    <div class="boutons">
+      <p class="boutons__texte">{{ texte }}</p>
+    </div>
+  </a>
 </template>
 
 <style lang="scss" scoped>
@@ -19,9 +21,13 @@
     font-family: $primary-font-family;
     font-size: $regular-font-size;
     text-transform: uppercase;
+    color: $secondary-color;
     @include large-up {
       font-size: rem(20);
     }
+  }
+  &__lien {
+    text-decoration: none;
   }
 }
 </style>
@@ -29,5 +35,6 @@
 <script setup>
 defineProps({
   texte: String,
+  lien: String,
 });
 </script>

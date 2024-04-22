@@ -1,132 +1,136 @@
 <template>
-  <!--Parties intro-->
-  <div class="intro">
-    <img class="intro__img" src="/plage.jpg" />
-    <div class="intro__contentBlock">
-      <Header home color="#000" annee="2024" />
-      <div class="intro__content">
-        <h1 class="intro__titre">Développement web</h1>
-        <p class="intro__texte">
-          Le Lorem Ipsum est simplement du faux texte employé dans la
-          composition et la mise en page avant impression.
-        </p>
-      </div>
-      <div class="intro__flecheBlock">
-        <IconsFleche-longue class="intro__fleche" color="#000" />
+  <div class="id">
+    <!--Parties intro-->
+    <div class="intro">
+      <img class="intro__img" src="/plage.jpg" />
+      <div class="intro__contentBlock">
+        <Header home color="#000" annee="2024" />
+        <div class="intro__content">
+          <h1 class="intro__titre">Développement web</h1>
+          <p class="intro__texte">
+            Le Lorem Ipsum est simplement du faux texte employé dans la
+            composition et la mise en page avant impression.
+          </p>
+        </div>
+        <div class="intro__flecheBlock">
+          <IconsFleche-longue class="intro__fleche" color="#000" />
+        </div>
       </div>
     </div>
-  </div>
 
-  <!--Partie contexte-->
-  <div class="contexte">
-    <div class="contexteBlock">
-      <div class="contexte__content --demande">
-        <h2 class="contexte__titre">La demande</h2>
-        <p class="contexte__texte --demande">
-          Le Lorem Ipsum est simplement du faux texte employé dans la
-          composition et la mise en page avant impression. Le Lorem Ipsum est
-          simplement du faux texte employé dans la composition et la mise en
-          page avant impression. Le Lorem Ipsum est simplement du faux texte
-          employé dans la composition et la mise en page avant impression. Le
-          Lorem Ipsum est simplement du faux texte employé dans la composition
-          et la mise en page avant impression.
-        </p>
+    <!--Partie contexte-->
+    <div class="contexte">
+      <div class="contexteBlock">
+        <div class="contexte__content --demande">
+          <h2 class="contexte__titre">La demande</h2>
+          <p class="contexte__texte --demande">
+            Le Lorem Ipsum est simplement du faux texte employé dans la
+            composition et la mise en page avant impression. Le Lorem Ipsum est
+            simplement du faux texte employé dans la composition et la mise en
+            page avant impression. Le Lorem Ipsum est simplement du faux texte
+            employé dans la composition et la mise en page avant impression. Le
+            Lorem Ipsum est simplement du faux texte employé dans la composition
+            et la mise en page avant impression.
+          </p>
+        </div>
+        <div class="contexte__iconsBlock --interrogation">
+          <IconsInterrogation class="contexte__icons" />
+        </div>
+        <div class="contexte__content --reponse">
+          <h2 class="contexte__titre">Ma réponse</h2>
+          <p class="contexte__texte --reponse">
+            Le Lorem Ipsum est simplement du faux texte employé dans la
+            composition et la mise en page avant impression. Le Lorem Ipsum est
+            simplement du faux texte employé dans la composition et la mise en
+            page avant impression. Le Lorem Ipsum est simplement du faux texte
+            employé dans la composition et la mise en page avant impression. Le
+            Lorem Ipsum est simplement du faux texte employé dans la composition
+            et la mise en page avant impression.
+          </p>
+        </div>
+        <div class="contexte__iconsBlock">
+          <IconsValidation class="contexte__icons" />
+        </div>
       </div>
-      <div class="contexte__iconsBlock --interrogation">
+      <div class="contexte__iconsBlock --desktop">
         <IconsInterrogation class="contexte__icons" />
-      </div>
-      <div class="contexte__content --reponse">
-        <h2 class="contexte__titre">Ma réponse</h2>
-        <p class="contexte__texte --reponse">
-          Le Lorem Ipsum est simplement du faux texte employé dans la
-          composition et la mise en page avant impression. Le Lorem Ipsum est
-          simplement du faux texte employé dans la composition et la mise en
-          page avant impression. Le Lorem Ipsum est simplement du faux texte
-          employé dans la composition et la mise en page avant impression. Le
-          Lorem Ipsum est simplement du faux texte employé dans la composition
-          et la mise en page avant impression.
-        </p>
-      </div>
-      <div class="contexte__iconsBlock">
         <IconsValidation class="contexte__icons" />
       </div>
     </div>
-    <div class="contexte__iconsBlock --desktop">
-      <IconsInterrogation class="contexte__icons" />
-      <IconsValidation class="contexte__icons" />
+    <!--Partie galerie photo-->
+    <div class="galerie">
+      <img class="galerie__img" src="/voiture.jpg" />
+      <img class="galerie__img" src="/voiture.jpg" />
+      <img class="galerie__img" src="/voiture.jpg" />
+      <img class="galerie__img" src="/voiture.jpg" />
+      <img class="galerie__img" src="/voiture.jpg" />
+      <img class="galerie__img" src="/voiture.jpg" />
     </div>
-  </div>
-  <!--Partie galerie photo-->
-  <div class="galerie">
-    <img class="galerie__img" src="/voiture.jpg" />
-    <img class="galerie__img" src="/voiture.jpg" />
-    <img class="galerie__img" src="/voiture.jpg" />
-    <img class="galerie__img" src="/voiture.jpg" />
-    <img class="galerie__img" src="/voiture.jpg" />
-    <img class="galerie__img" src="/voiture.jpg" />
-  </div>
-  <!--Technologies-->
-  <div class="technologies">
-    <div class="technologies__logos">
-      <IconsHtml />
-      <IconsCss />
-      <IconsJavascript />
-      <IconsSql />
-      <IconsVue />
-      <IconsNuxt />
-      <IconsSass />
-      <IconsTailwind />
-      <IconsExpress />
-      <IconsNode />
-      <IconsHtml />
-      <IconsCss />
-      <IconsJavascript />
-      <IconsSql />
-      <IconsVue />
-      <IconsNuxt />
-      <IconsSass />
-      <IconsTailwind />
-      <IconsExpress />
-      <IconsNode />
+    <!--Technologies-->
+    <div class="technologies">
+      <div class="technologies__logos">
+        <IconsHtml />
+        <IconsCss />
+        <IconsJavascript />
+        <IconsSql />
+        <IconsVue />
+        <IconsNuxt />
+        <IconsSass />
+        <IconsTailwind />
+        <IconsExpress />
+        <IconsNode />
+        <IconsHtml />
+        <IconsCss />
+        <IconsJavascript />
+        <IconsSql />
+        <IconsVue />
+        <IconsNuxt />
+        <IconsSass />
+        <IconsTailwind />
+        <IconsExpress />
+        <IconsNode />
+      </div>
     </div>
-  </div>
 
-  <!--Méthode-->
-  <div class="methode">
-    <h2 class="methode__titre">Ma méthode</h2>
-    <p class="methode__texte">
-      Le Lorem Ipsum est simplement du faux texte employé dans la composition et
-      la mise en page avant impression. Le Lorem Ipsum est simplement du faux
-      texte employé dans la composition et la mise en page avant impression. Le
-      Lorem Ipsum est simplement du faux texte employé dans la composition et la
-      mise en page avant impression. Le Lorem Ipsum est simplement du faux texte
-      employé dans la composition et la mise en page avant impression.
-    </p>
-    <p class="methode__texte">
-      Le Lorem Ipsum est simplement du faux texte employé dans la composition et
-      la mise en page avant impression. Le Lorem Ipsum est simplement du faux
-      texte employé dans la composition et la mise en page avant impression. Le
-      Lorem Ipsum est simplement du faux texte employé dans la composition et la
-      mise en page avant impression. Le Lorem Ipsum est simplement du faux texte
-      employé dans la composition et la mise en page avant impression.
-    </p>
-  </div>
-
-  <!--Boutons-->
-  <div class="methode__boutons">
-    <Boutons lien="https://www.youtube.com/" texte="La maquette" />
-    <Boutons lien="https://www.google.com/" texte="Le site" />
-  </div>
-  <div class="conclusion">
-    <div class="conclusion__content">
-      <NuxtLink class="conclusion__lien" to="/projets">
-        <p class="conclusion__texte">voir d'autres projets</p>
-      </NuxtLink>
-      <NuxtLink class="conclusion__lien" to="/projets">
-        <IconsFleche-cercle class="conclusion__icons" color="#000" />
-      </NuxtLink>
+    <!--Méthode-->
+    <div class="methode">
+      <h2 class="methode__titre">Ma méthode</h2>
+      <p class="methode__texte">
+        Le Lorem Ipsum est simplement du faux texte employé dans la composition
+        et la mise en page avant impression. Le Lorem Ipsum est simplement du
+        faux texte employé dans la composition et la mise en page avant
+        impression. Le Lorem Ipsum est simplement du faux texte employé dans la
+        composition et la mise en page avant impression. Le Lorem Ipsum est
+        simplement du faux texte employé dans la composition et la mise en page
+        avant impression.
+      </p>
+      <p class="methode__texte">
+        Le Lorem Ipsum est simplement du faux texte employé dans la composition
+        et la mise en page avant impression. Le Lorem Ipsum est simplement du
+        faux texte employé dans la composition et la mise en page avant
+        impression. Le Lorem Ipsum est simplement du faux texte employé dans la
+        composition et la mise en page avant impression. Le Lorem Ipsum est
+        simplement du faux texte employé dans la composition et la mise en page
+        avant impression.
+      </p>
     </div>
-    <Footer />
+
+    <!--Boutons-->
+    <div class="methode__boutons">
+      <Boutons lien="https://www.youtube.com/" texte="La maquette" />
+      <Boutons lien="https://www.google.com/" texte="Le site" />
+    </div>
+    <div class="conclusion">
+      <div class="conclusion__content">
+        <NuxtLink class="conclusion__lien" to="/projets">
+          <p class="conclusion__texte">voir d'autres projets</p>
+        </NuxtLink>
+        <NuxtLink class="conclusion__lien" to="/projets">
+          <IconsFleche-cercle class="conclusion__icons" color="#000" />
+        </NuxtLink>
+      </div>
+      <Footer class="footer" />
+    </div>
   </div>
 </template>
 
@@ -403,6 +407,9 @@
   &__lien {
     text-decoration: none;
   }
+}
+.footer {
+  padding-bottom: rem(40);
 }
 </style>
 

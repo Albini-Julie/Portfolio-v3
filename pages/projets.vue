@@ -14,7 +14,7 @@
           :description="projet.projet_description[0].text"
           :voir="projets.data.voir[0].text"
           :image="projet.projet_image.url"
-          :href="`/projet/${projet.projet_title[0].text}`"
+          :href="`/projet/${index}`"
           v-if="slide === index"
           :class="{
             'slide-animation': slide === index && anime,

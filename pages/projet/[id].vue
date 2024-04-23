@@ -134,6 +134,17 @@
   </div>
 </template>
 
+<script setup>
+import { useRoute } from "vue-router";
+const route = useRoute();
+// Appel du client usePrismic pour avoir accès aux données de la single page menu
+const { client } = usePrismic();
+const { data: projet, error } = await useAsyncData("projet", () =>
+  client.getByUID("projet", `projet-${route.params.id}`)
+);
+console.log(projet);
+</script>
+
 <style lang="scss" scoped>
 .intro {
   @include large-up {

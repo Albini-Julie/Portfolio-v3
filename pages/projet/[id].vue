@@ -4,12 +4,11 @@
     <div class="intro">
       <img class="intro__img" src="/plage.jpg" />
       <div class="intro__contentBlock">
-        <Header home color="#000" annee="2024" />
+        <Header home color="#000" :annee="projet.data.annee_projet[0].text" />
         <div class="intro__content">
-          <h1 class="intro__titre">Développement web</h1>
+          <h1 class="intro__titre">{{ projet.data.titre_projet[0].text }}</h1>
           <p class="intro__texte">
-            Le Lorem Ipsum est simplement du faux texte employé dans la
-            composition et la mise en page avant impression.
+            {{ projet.data.description_projet[0].text }}
           </p>
         </div>
         <div class="intro__flecheBlock">
@@ -22,30 +21,22 @@
     <div class="contexte">
       <div class="contexteBlock">
         <div class="contexte__content --demande">
-          <h2 class="contexte__titre">La demande</h2>
+          <h2 class="contexte__titre">
+            {{ projet.data.demande_titre[0].text }}
+          </h2>
           <p class="contexte__texte --demande">
-            Le Lorem Ipsum est simplement du faux texte employé dans la
-            composition et la mise en page avant impression. Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est simplement du faux texte
-            employé dans la composition et la mise en page avant impression. Le
-            Lorem Ipsum est simplement du faux texte employé dans la composition
-            et la mise en page avant impression.
+            {{ projet.data.demande_texte[0].text }}
           </p>
         </div>
         <div class="contexte__iconsBlock --interrogation">
           <IconsInterrogation class="contexte__icons" />
         </div>
         <div class="contexte__content --reponse">
-          <h2 class="contexte__titre">Ma réponse</h2>
+          <h2 class="contexte__titre">
+            {{ projet.data.proposition_titre[0].text }}
+          </h2>
           <p class="contexte__texte --reponse">
-            Le Lorem Ipsum est simplement du faux texte employé dans la
-            composition et la mise en page avant impression. Le Lorem Ipsum est
-            simplement du faux texte employé dans la composition et la mise en
-            page avant impression. Le Lorem Ipsum est simplement du faux texte
-            employé dans la composition et la mise en page avant impression. Le
-            Lorem Ipsum est simplement du faux texte employé dans la composition
-            et la mise en page avant impression.
+            {{ projet.data.proposition_texte[0].text }}
           </p>
         </div>
         <div class="contexte__iconsBlock">
@@ -58,72 +49,66 @@
       </div>
     </div>
     <!--Partie galerie photo-->
-    <div class="galerie">
-      <img class="galerie__img" src="/voiture.jpg" />
-      <img class="galerie__img" src="/voiture.jpg" />
-      <img class="galerie__img" src="/voiture.jpg" />
-      <img class="galerie__img" src="/voiture.jpg" />
-      <img class="galerie__img" src="/voiture.jpg" />
-      <img class="galerie__img" src="/voiture.jpg" />
+    <div v-for="i in projet.data.images_projet" class="galerie">
+      <img class="galerie__img" :src="i.image_projet.url" />
     </div>
     <!--Technologies-->
     <div class="technologies">
       <div class="technologies__logos">
-        <IconsHtml />
-        <IconsCss />
-        <IconsJavascript />
-        <IconsSql />
-        <IconsVue />
-        <IconsNuxt />
-        <IconsSass />
-        <IconsTailwind />
-        <IconsExpress />
-        <IconsNode />
-        <IconsHtml />
-        <IconsCss />
-        <IconsJavascript />
-        <IconsSql />
-        <IconsVue />
-        <IconsNuxt />
-        <IconsSass />
-        <IconsTailwind />
-        <IconsExpress />
-        <IconsNode />
+        <div v-for="i in projet.data.technologies_projet">
+          <IconsHtml v-if="i.technologie_nom[0].text == 'html'" />
+          <IconsCss v-if="i.technologie_nom[0].text == 'css'" />
+          <IconsJavascript v-if="i.technologie_nom[0].text == 'javascript'" />
+          <IconsSql v-if="i.technologie_nom[0].text == 'sql'" />
+          <IconsVue v-if="i.technologie_nom[0].text == 'vuejs'" />
+          <IconsNuxt v-if="i.technologie_nom[0].text == 'nuxtjs'" />
+          <IconsSass v-if="i.technologie_nom[0].text == 'sass'" />
+          <IconsTailwind v-if="i.technologie_nom[0].text == 'tailwind'" />
+          <IconsExpress v-if="i.technologie_nom[0].text == 'express'" />
+          <IconsNode v-if="i.technologie_nom[0].text == 'nodejs'" />
+          <IconsFirebase v-if="i.technologie_nom[0].text == 'firebase'" />
+          <IconsOpenweathermap
+            v-if="i.technologie_nom[0].text == 'openweathermap'"
+          />
+          <IconsOpenstreetmap
+            v-if="i.technologie_nom[0].text == 'openstreetmap'"
+          />
+          <IconsLeaflet v-if="i.technologie_nom[0].text == 'leaflet'" />
+          <IconsFork v-if="i.technologie_nom[0].text == 'fork'" />
+          <IconsNetlify v-if="i.technologie_nom[0].text == 'netlify'" />
+          <IconsInfomaniak v-if="i.technologie_nom[0].text == 'infomaniak'" />
+        </div>
       </div>
     </div>
 
     <!--Méthode-->
     <div class="methode">
-      <h2 class="methode__titre">Ma méthode</h2>
-      <p class="methode__texte">
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition
-        et la mise en page avant impression. Le Lorem Ipsum est simplement du
-        faux texte employé dans la composition et la mise en page avant
-        impression. Le Lorem Ipsum est simplement du faux texte employé dans la
-        composition et la mise en page avant impression. Le Lorem Ipsum est
-        simplement du faux texte employé dans la composition et la mise en page
-        avant impression.
-      </p>
-      <p class="methode__texte">
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition
-        et la mise en page avant impression. Le Lorem Ipsum est simplement du
-        faux texte employé dans la composition et la mise en page avant
-        impression. Le Lorem Ipsum est simplement du faux texte employé dans la
-        composition et la mise en page avant impression. Le Lorem Ipsum est
-        simplement du faux texte employé dans la composition et la mise en page
-        avant impression.
+      <h2 class="methode__titre">{{ projet.data.methode_titre[0].text }}</h2>
+      <p
+        class="methode__texte"
+        v-for="i in projet.data.methode_textes[0].methode_texte"
+      >
+        {{ i.text }}
       </p>
     </div>
 
     <!--Boutons-->
     <div class="methode__boutons">
-      <Boutons lien="https://www.youtube.com/" texte="La maquette" />
-      <Boutons lien="https://www.google.com/" texte="Le site" />
+      <Boutons
+        lien="https://www.youtube.com/"
+        :texte="projet.data.maquette_texte[0].text"
+      />
+      <Boutons
+        lien="https://www.google.com/"
+        :texte="projet.data.site_texte[0].text"
+      />
     </div>
     <div class="conclusion">
       <div class="conclusion__content">
         <NuxtLink class="conclusion__lien" to="/projets">
-          <p class="conclusion__texte">voir d'autres projets</p>
+          <p class="conclusion__texte">
+            {{ projet.data.autres_projets_texte[0].text }}
+          </p>
         </NuxtLink>
         <NuxtLink class="conclusion__lien" to="/projets">
           <IconsFleche-cercle class="conclusion__icons" color="#000" />

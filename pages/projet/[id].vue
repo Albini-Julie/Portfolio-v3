@@ -2,7 +2,7 @@
   <div class="id">
     <!--Parties intro-->
     <div class="intro">
-      <img class="intro__img" src="/plage.jpg" />
+      <img class="intro__img" :src="projet.data.projet_introimage.url" />
       <div class="intro__contentBlock">
         <Header home color="#000" :annee="projet.data.annee_projet[0].text" />
         <div class="intro__content">

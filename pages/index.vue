@@ -17,11 +17,7 @@
       :lien_projet="index.data.lien_projets[0].text"
       class="index__liens --mobile"
     />
-    <Footer
-      :link_linkedin="index.data.linkedin.url"
-      :link_mail="index.data.mail.url"
-      class="index__footer"
-    />
+    <Footer class="index__footer" />
   </div>
 </template>
 

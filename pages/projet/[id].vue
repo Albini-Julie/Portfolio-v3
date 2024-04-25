@@ -49,8 +49,10 @@
       </div>
     </div>
     <!--Partie galerie photo-->
-    <div v-for="i in projet.data.images_projet" class="galerie">
-      <img class="galerie__img" :src="i.image_projet.url" />
+    <div class="galerie">
+      <div v-for="i in projet.data.images_projet">
+        <img class="galerie__img" :src="i.image_projet.url" />
+      </div>
     </div>
     <!--Technologies-->
     <div class="technologies">
@@ -95,11 +97,11 @@
     <!--Boutons-->
     <div class="methode__boutons">
       <Boutons
-        lien="https://www.youtube.com/"
+        :lien="projet.data.maquette_lien.url"
         :texte="projet.data.maquette_texte[0].text"
       />
       <Boutons
-        lien="https://www.google.com/"
+        :lien="projet.data.site_lien.url"
         :texte="projet.data.site_texte[0].text"
       />
     </div>
@@ -288,10 +290,10 @@ console.log(projet);
 .galerie {
   @include medium-up {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   }
   @include large-up {
-    grid-template-columns: repeat(auto-fit, minmax(33.3%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   }
   @include x-large-up {
     grid-template-columns: repeat(auto-fit, minmax(33.3%, 1fr));
@@ -299,6 +301,21 @@ console.log(projet);
   &__img {
     width: 100%;
     margin-top: -10px;
+    transition: transform 0.3s ease;
+    @include large-up {
+      height: 300px;
+      overflow: auto;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+    @include x-large-up {
+      height: 300px;
+      overflow: auto;
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
   }
 }
 
@@ -309,6 +326,7 @@ console.log(projet);
   overflow-x: auto;
   display: flex;
   padding: rem(20) rem(40);
+  justify-content: center;
   /* On ajuste la largeur en fonction du nombre de logos et de leur taille */
   scrollbar-width: thin; /* Utilise une barre de défilement fine */
   scrollbar-color: $secondary-color $primary-color; /* Couleur de la barre et du fond */

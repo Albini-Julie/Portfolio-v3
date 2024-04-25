@@ -274,6 +274,7 @@ console.log(projet);
       padding-right: rem(30);
       @include large-up {
         border: none;
+        width: 50%;
       }
     }
     &.--reponse {
@@ -283,6 +284,7 @@ console.log(projet);
       padding-left: rem(30);
       @include large-up {
         margin: rem(0);
+        width: 50%;
       }
     }
   }

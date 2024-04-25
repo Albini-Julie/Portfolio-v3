@@ -1,10 +1,23 @@
 <template>
   <div class="footer">
-    <a :href="link_linkedin"> <IconsLinkedin class="footer__icons" /></a>
-    <a :href="link_mail"> <IconsMail class="footer__icons" /></a>
+    <a :href="footer.data.lien_linkedin.url">
+      <IconsLinkedin class="footer__icons"
+    /></a>
+    <a :href="footer.data.lien_mail.url">
+      <IconsMail class="footer__icons"
+    /></a>
     <NuxtLink to="/legal"> <IconsC class="footer__icons" /></NuxtLink>
   </div>
 </template>
+
+<script setup>
+// Appel du client usePrismic pour avoir accès aux données de la single page menu
+const { client } = usePrismic();
+const { data: footer, error } = await useAsyncData("footer", () =>
+  client.getSingle("footer")
+);
+console.log(footer);
+</script>
 
 <style lang="scss" scoped>
 .footer {
@@ -25,10 +38,3 @@
   }
 }
 </style>
-
-<script setup>
-defineProps({
-  link_linkedin: String,
-  link_mail: String,
-});
-</script>

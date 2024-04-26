@@ -79,6 +79,10 @@
           <IconsFork v-if="i.technologie_nom[0].text == 'fork'" />
           <IconsNetlify v-if="i.technologie_nom[0].text == 'netlify'" />
           <IconsInfomaniak v-if="i.technologie_nom[0].text == 'infomaniak'" />
+          <IconsSupabase v-if="i.technologie_nom[0].text == 'supabase'" />
+          <IconsPrismic v-if="i.technologie_nom[0].text == 'prismic'" />
+          <IconsHttp v-if="i.technologie_nom[0].text == 'http'" />
+          <IconsGithub v-if="i.technologie_nom[0].text == 'github'" />
         </div>
       </div>
     </div>
@@ -328,10 +332,13 @@ console.log(projet);
   overflow-x: auto;
   display: flex;
   padding: rem(20) rem(40);
-  justify-content: center;
+  justify-content: start;
   /* On ajuste la largeur en fonction du nombre de logos et de leur taille */
   scrollbar-width: thin; /* Utilise une barre de défilement fine */
   scrollbar-color: $secondary-color $primary-color; /* Couleur de la barre et du fond */
+  @include x-large-up {
+    justify-content: center;
+  }
   &::-webkit-scrollbar-track {
     background-color: $primary-color; /* Couleur du fond de la barre de défilement */
   }

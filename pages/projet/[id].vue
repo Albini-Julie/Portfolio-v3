@@ -176,8 +176,11 @@ console.log(projet);
   }
   &__texte {
     font-family: $primary-font-family;
-    font-size: $small-font-size;
+    font-size: $smaller-font-size;
     font-weight: 300;
+    @include large-up {
+      font-size: $small-font-size;
+    }
     @include x-large-up {
       font-size: $regular-font-size;
     }
@@ -221,7 +224,7 @@ console.log(projet);
   }
   &__texte {
     font-family: $primary-font-family;
-    font-size: $small-font-size;
+    font-size: $smaller-font-size;
     color: $primary-color;
     @include medium-up {
       &.--demande {
@@ -232,6 +235,7 @@ console.log(projet);
       }
     }
     @include large-up {
+      font-size: $small-font-size;
       &.--demande {
         padding-left: rem(0);
       }
@@ -375,9 +379,10 @@ console.log(projet);
   }
   &__texte {
     font-family: $primary-font-family;
-    font-size: $small-font-size;
+    font-size: $smaller-font-size;
     @include large-up {
       width: 90%;
+      font-size: $small-font-size;
     }
     @include x-large-up {
       font-size: $regular-font-size;

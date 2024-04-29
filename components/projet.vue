@@ -118,12 +118,13 @@ const nextSlide = () => {
     }
   }
   &__texte {
-    font-size: $small-font-size;
+    font-size: $smaller-font-size;
     font-family: $primary-font-family;
     margin-top: 0px;
     color: v-bind(colorText);
     @include large-up {
       width: 80%;
+      font-size: $small-font-size;
     }
     @include x-large-up {
       font-size: $regular-font-size;

@@ -67,7 +67,7 @@ console.log(index);
     margin: 0px;
     display: flex;
     justify-content: start;
-    margin-top: rem(50);
+    margin-top: rem(0);
     margin-left: rem(20);
     @include medium-up {
       margin-top: rem(30);
@@ -96,10 +96,11 @@ console.log(index);
     &.--mobile {
       width: 80%;
       margin: auto;
-      margin-top: rem(50);
+      margin-top: rem(20);
       display: block;
       @include medium-up {
         width: 60%;
+        margin-top: rem(50);
       }
       @include large-up {
         display: none;

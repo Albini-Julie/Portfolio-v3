@@ -27,6 +27,9 @@
 </template>
 
 <style lang="scss" scoped>
+.caroussel {
+  width: 100%;
+}
 .projets {
   background-color: black;
 }

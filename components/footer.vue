@@ -27,6 +27,7 @@ console.log(footer);
   gap: rem(5);
   margin-left: rem(40);
   margin-bottom: rem(40);
+  width: fit-content;
   @include x-large-up {
     margin-left: rem(60);
   }

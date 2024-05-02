@@ -46,7 +46,7 @@
   }
   &__footer {
     margin-top: rem(40);
-    padding-bottom: rem(20);
+    padding-bottom: rem(40);
   }
 }
 .content {

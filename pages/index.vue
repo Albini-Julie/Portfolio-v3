@@ -2,7 +2,7 @@
   <div class="index">
     <Header :annee="index.data.annee[0].text" />
     <div class="index__julieBlock">
-      <h1 class="index__titre">{{ index.data.titre_1[0].text }}</h1>
+      <h1 class="index__titre --julie">{{ index.data.titre_1[0].text }}</h1>
       <Liens
         :lien_apropos="index.data.lien_apropos[0].text"
         :lien_projet="index.data.lien_projets[0].text"
@@ -10,7 +10,7 @@
       />
     </div>
     <div class="index__albiniBlock">
-      <h1 class="index__titre">{{ index.data.titre_2[0].text }}</h1>
+      <h1 class="index__titre --albini">{{ index.data.titre_2[0].text }}</h1>
     </div>
     <Liens
       :lien_apropos="index.data.lien_apropos[0].text"
@@ -36,6 +36,7 @@ console.log(index);
     font-family: $secondary-font-family;
     font-size: $bigger-font-size;
     margin: 0px;
+    font-weight: 400;
     @include medium-up {
       font-size: rem(180);
     }
@@ -44,6 +45,17 @@ console.log(index);
     }
     @include x-large-up {
       font-size: $giant-font-size;
+    }
+    &.--julie:hover {
+      font-family: $bonus-primary-font-family;
+      font-weight: 400;
+    }
+    &.--albini:hover {
+      @include only-small {
+        font-size: rem(115);
+      }
+      font-family: $bonus-secondary-font-family;
+      font-weight: 400;
     }
   }
   &__albiniBlock {

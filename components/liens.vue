@@ -18,20 +18,37 @@
 <style lang="scss" scoped>
 .liens {
   &__liens {
+    transition: border 0.1s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: rem(0) rem(40);
-    border-bottom: solid 2px $secondary-color;
     margin: rem(20);
+    margin-bottom: 0px;
     gap: rem(50);
-
     @include x-large-up {
       gap: rem(140);
+    }
+    &:hover {
+      border-bottom: none;
     }
   }
   &__link {
     text-decoration: none;
+    &::after {
+      content: "";
+      display: block;
+      height: 0.15rem;
+      background: black;
+      transform: scale(0);
+      transition: transform 0.6s;
+      transform-origin: right;
+      animation: fade-in 0.6s;
+    }
+    &:hover::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
   }
   &__texte {
     text-transform: uppercase;
@@ -47,6 +64,20 @@
   }
   &__icons {
     width: rem(25);
+  }
+}
+
+@keyframes smooth {
+  0% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 </style>

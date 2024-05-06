@@ -8,14 +8,12 @@
         <p class="projet__texte">
           {{ description }}
         </p>
-        <div class="projet__voir">
-          <RouterLink class="projet__lien" :to="href">
+        <RouterLink class="projet__lien" :to="href">
+          <div class="projet__voir">
             <p class="projet__voirTexte">{{ voir }}</p>
-          </RouterLink>
-          <RouterLink class="projet__lien" :to="href">
             <IconsFleche-cercle :color="colorText" />
-          </RouterLink>
-        </div>
+          </div>
+        </RouterLink>
 
         <div class="projet__fleches">
           <IconsFleche-longue
@@ -136,6 +134,7 @@ const nextSlide = () => {
     align-items: center;
     gap: rem(10);
     margin-right: rem(40);
+    width: fit-content;
     @include large-up {
       justify-content: start;
     }
@@ -170,6 +169,21 @@ const nextSlide = () => {
   }
   &__lien {
     text-decoration: none;
+    width: fit-content;
+    &::after {
+      content: "";
+      display: block;
+      height: 0.15rem;
+      background: black;
+      transform: scale(0);
+      transition: transform 0.6s;
+      transform-origin: right;
+      animation: fade-in 0.6s;
+    }
+    &:hover::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
   }
 }
 </style>

@@ -170,6 +170,7 @@ console.log(projet);
     font-family: $secondary-font-family;
     font-size: $medium-font-size;
     margin-top: 0px;
+
     @include x-large-up {
       font-size: $big-font-size;
     }
@@ -218,6 +219,7 @@ console.log(projet);
     font-family: $secondary-font-family;
     font-size: $medium-font-size;
     color: $primary-color;
+    font-weight: 400;
     @include x-large-up {
       font-size: $big-font-size;
     }
@@ -380,6 +382,7 @@ console.log(projet);
   &__texte {
     font-family: $primary-font-family;
     font-size: $smaller-font-size;
+
     @include large-up {
       width: 90%;
       font-size: $small-font-size;

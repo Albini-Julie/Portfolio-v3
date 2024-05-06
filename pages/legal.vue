@@ -54,7 +54,7 @@
     font-family: $secondary-font-family;
     font-size: rem(20);
     margin-top: rem(30);
-
+    font-weight: 500;
     @include x-large-up {
       font-size: rem(25);
     }

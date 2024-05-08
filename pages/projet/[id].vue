@@ -21,7 +21,7 @@
     <div class="contexte">
       <div class="contexteBlock">
         <div class="contexte__content --demande">
-          <h2 class="contexte__titre">
+          <h2 class="contexte__titre --demande">
             {{ projet.data.demande_titre[0].text }}
           </h2>
           <p class="contexte__texte --demande">
@@ -32,7 +32,7 @@
           <IconsInterrogation class="contexte__icons" />
         </div>
         <div class="contexte__content --reponse">
-          <h2 class="contexte__titre">
+          <h2 class="contexte__titre --proposition">
             {{ projet.data.proposition_titre[0].text }}
           </h2>
           <p class="contexte__texte --reponse">
@@ -110,16 +110,17 @@
       />
     </div>
     <div class="conclusion">
-      <div class="conclusion__content">
+      <div class="essai">
         <NuxtLink class="conclusion__lien" to="/projets">
-          <p class="conclusion__texte">
-            {{ projet.data.autres_projets_texte[0].text }}
-          </p>
-        </NuxtLink>
-        <NuxtLink class="conclusion__lien" to="/projets">
-          <IconsFleche-cercle class="conclusion__icons" color="#000" />
+          <div class="conclusion__content">
+            <p class="conclusion__texte">
+              {{ projet.data.autres_projets_texte[0].text }}
+            </p>
+            <IconsFleche-cercle class="conclusion__icons" color="#000" />
+          </div>
         </NuxtLink>
       </div>
+
       <Footer class="footer" />
     </div>
   </div>
@@ -137,6 +138,10 @@ console.log(projet);
 </script>
 
 <style lang="scss" scoped>
+.essai {
+  width: fit-content;
+  margin: auto;
+}
 .intro {
   @include large-up {
     display: flex;
@@ -193,6 +198,22 @@ console.log(projet);
   &__fleche {
     transform: rotate(90deg);
     margin-top: rem(50);
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(20px) rotate(90deg);
+    }
+    @include large-up {
+      margin-top: rem(20);
+      &:hover {
+        transform: translateY(10px) rotate(90deg);
+      }
+    }
+    @include x-large-up {
+      margin-top: rem(40);
+      &:hover {
+        transform: translateY(20px) rotate(90deg);
+      }
+    }
   }
 }
 
@@ -220,14 +241,45 @@ console.log(projet);
     font-size: $medium-font-size;
     color: $primary-color;
     font-weight: 400;
+
     @include x-large-up {
       font-size: $big-font-size;
     }
+    &.--demande {
+      animation: animeDemande 1s forwards;
+    }
+    @keyframes animeDemande {
+      0% {
+        transform: translateX(100px);
+      }
+      100% {
+        transform: translateX(-30px);
+      }
+    }
+    &.--proposition {
+      animation: animeProposition 1s forwards;
+    }
+    @keyframes animeProposition {
+      0% {
+        transform: translateX(-50px);
+      }
+      100% {
+        transform: translateX(30px);
+      }
+    }
   }
+
   &__texte {
     font-family: $primary-font-family;
     font-size: $smaller-font-size;
     color: $primary-color;
+    &.--demande {
+      padding-right: rem(30);
+    }
+    &.--reponse {
+      padding-left: rem(30);
+    }
+
     @include medium-up {
       &.--demande {
         padding-left: rem(100);
@@ -276,12 +328,23 @@ console.log(projet);
   &__icons {
     width: 40px;
     height: 40px;
+    &:hover {
+      animation: rotate 0.5s forwards;
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
   &__content {
     &.--demande {
       text-align: end;
       border-right: solid 3px $primary-color;
-      padding-right: rem(30);
+
       @include large-up {
         border: none;
         width: 50%;
@@ -291,7 +354,6 @@ console.log(projet);
       margin-top: rem(50);
       text-align: start;
       border-left: solid 3px $primary-color;
-      padding-left: rem(30);
       @include large-up {
         margin: rem(0);
         width: 50%;
@@ -429,7 +491,7 @@ console.log(projet);
     justify-content: center;
     gap: rem(20);
     align-items: center;
-    margin: rem(30) rem(0);
+    margin-top: rem(30);
     @include large-up {
       margin-bottom: rem(0);
       margin-top: rem(30);
@@ -437,10 +499,25 @@ console.log(projet);
   }
   &__lien {
     text-decoration: none;
+    &::after {
+      content: "";
+      display: block;
+      height: 0.15rem;
+      background: black;
+      transform: scale(0);
+      transition: transform 0.6s;
+      transform-origin: right;
+      animation: fade-in 0.6s;
+    }
+    &:hover::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
   }
 }
 .footer {
   padding-bottom: rem(40);
+  margin-top: rem(30);
 }
 </style>
 

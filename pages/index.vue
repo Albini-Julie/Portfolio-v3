@@ -121,9 +121,11 @@ console.log(index);
   }
 
   &__footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    @include large-up {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+    }
   }
 }
 </style>

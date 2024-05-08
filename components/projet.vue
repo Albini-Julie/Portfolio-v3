@@ -70,6 +70,7 @@ const nextSlide = () => {
   width: fit-content;
 }
 .projet {
+  background-color: v-bind(color);
   @include large-up {
     display: flex;
     height: 100vh;
@@ -84,7 +85,6 @@ const nextSlide = () => {
     }
   }
   &__contentBlock {
-    background-color: v-bind(color);
     @include only-medium {
       display: flex;
       flex-direction: column;

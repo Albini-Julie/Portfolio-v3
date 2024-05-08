@@ -8,12 +8,14 @@
         <p class="projet__texte">
           {{ description }}
         </p>
-        <RouterLink class="projet__lien" :to="href">
-          <div class="projet__voir">
-            <p class="projet__voirTexte">{{ voir }}</p>
-            <IconsFleche-cercle :color="colorText" />
-          </div>
-        </RouterLink>
+        <div class="essai">
+          <NuxtLink class="projet__lien" :to="href">
+            <div class="projet__voir">
+              <p class="projet__voirTexte">{{ voir }}</p>
+              <IconsFleche-cercle :color="colorText" />
+            </div>
+          </NuxtLink>
+        </div>
 
         <div class="projet__fleches">
           <IconsFleche-longue
@@ -64,6 +66,9 @@ const nextSlide = () => {
 </script>
 
 <style lang="scss" scoped>
+.essai {
+  width: fit-content;
+}
 .projet {
   @include large-up {
     display: flex;
@@ -93,7 +98,6 @@ const nextSlide = () => {
   &__content {
     height: 50vh;
     margin: rem(0) rem(30);
-
     @include medium-up {
       width: 65%;
     }
@@ -136,6 +140,7 @@ const nextSlide = () => {
     margin-right: rem(40);
     width: fit-content;
     @include large-up {
+      width: 100%;
       justify-content: start;
     }
   }
@@ -163,13 +168,19 @@ const nextSlide = () => {
   }
   &__fleche {
     cursor: pointer;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateX(20px);
+    }
     &.--gauche {
       transform: rotate(180deg);
+      &:hover {
+        transform: translateX(-20px) rotate(180deg);
+      }
     }
   }
   &__lien {
     text-decoration: none;
-    width: fit-content;
     &::after {
       content: "";
       display: block;

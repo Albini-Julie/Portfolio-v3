@@ -14,14 +14,23 @@
   border-radius: 3rem;
   display: flex;
   justify-content: center;
+  color: $secondary-color;
+  transition: border-radius 0.3s ease;
+  &:hover {
+    border: solid 1px $primary-color;
+    border-radius: 20px;
+    color: $primary-color;
+    background-color: $secondary-color;
+  }
   @include medium-up {
     width: rem(150);
   }
+
   &__texte {
     font-family: $primary-font-family;
     font-size: $regular-font-size;
     text-transform: uppercase;
-    color: $secondary-color;
+
     @include large-up {
       font-size: rem(20);
     }

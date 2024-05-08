@@ -2,7 +2,7 @@
   <div class="header">
     <h2 class="header__annee">{{ annee }}</h2>
     <div class="header__iconsBloc">
-      <a :href="header.data.lien_cv.url" download>
+      <a :href="header.data.lien_cv.url" download target="_blank">
         <IconsDownload class="icons --download" />
       </a>
       <NuxtLink to="/">

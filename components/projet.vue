@@ -163,6 +163,10 @@ const nextSlide = () => {
     justify-content: space-between;
     align-items: center;
     margin-top: rem(10);
+    margin-bottom: rem(20);
+    @include large-up {
+      margin-bottom: rem(0);
+    }
     @include x-large-up {
       position: relative;
       left: 0;

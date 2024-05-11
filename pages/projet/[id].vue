@@ -138,9 +138,6 @@ console.log(projet);
 </script>
 
 <style lang="scss" scoped>
-html{
-    background-color: $primary-color;
-}
 .essai {
   width: fit-content;
   margin: auto;

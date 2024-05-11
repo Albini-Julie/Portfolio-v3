@@ -27,9 +27,6 @@
 </template>
 
 <style lang="scss" scoped>
-html{
-    background-color: $secondary-color;
-}
 .caroussel {
   width: 100%;
 }

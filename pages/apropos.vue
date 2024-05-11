@@ -73,6 +73,9 @@
 </template>
 
 <style lang="scss" scoped>
+html {
+  background-color: $primary-color;
+}
 .propos {
   height: 80vh;
   &__content {

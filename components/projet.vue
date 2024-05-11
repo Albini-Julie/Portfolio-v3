@@ -71,9 +71,9 @@ const nextSlide = () => {
 }
 .projet {
   background-color: v-bind(color);
+  height: 100vh;
   @include large-up {
     display: flex;
-    height: 100vh;
   }
 
   &__img {

@@ -121,10 +121,12 @@ console.log(index);
   }
 
   &__footer {
+    padding-top: rem(40);
     @include large-up {
       position: fixed;
       left: 0;
       bottom: 0;
+      padding: 0px;
     }
   }
 }

@@ -159,6 +159,7 @@ const nextSlide = () => {
     justify-content: space-between;
     align-items: center;
     margin-top: rem(10);
+    background-color: v-bind(color);
 
     @include x-large-up {
       position: relative;

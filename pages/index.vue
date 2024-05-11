@@ -31,6 +31,9 @@ console.log(index);
 </script>
 
 <style lang="scss" scoped>
+html {
+  background-color: $primary-color;
+}
 .index {
   &__titre {
     font-family: $secondary-font-family;

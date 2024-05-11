@@ -13,6 +13,9 @@
 </template>
 
 <style lang="scss" scoped>
+html{
+    background-color: $primary-color;
+}
 .legal {
   margin: rem(0) rem(40);
   @include medium-up {

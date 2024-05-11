@@ -87,6 +87,7 @@ const nextSlide = () => {
     }
   }
   &__contentBlock {
+    background-color: v-bind(color);
     @include only-medium {
       display: flex;
       flex-direction: column;
@@ -98,8 +99,9 @@ const nextSlide = () => {
     }
   }
   &__content {
-    height: 50vh;
+    //height: 50vh;
     margin: rem(0) rem(30);
+    background-color: v-bind(color);
     @include medium-up {
       width: 65%;
     }

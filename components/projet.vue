@@ -71,7 +71,9 @@ const nextSlide = () => {
 }
 .projet {
   background-color: v-bind(color);
-  height: 100vh;
+  height: fit-content;
+  margin: 0px;
+  padding: 0px;
   @include large-up {
     display: flex;
   }
@@ -159,8 +161,6 @@ const nextSlide = () => {
     justify-content: space-between;
     align-items: center;
     margin-top: rem(10);
-    background-color: v-bind(color);
-
     @include x-large-up {
       position: relative;
       left: 0;

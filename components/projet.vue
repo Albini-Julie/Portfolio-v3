@@ -81,6 +81,7 @@ const nextSlide = () => {
   &__img {
     height: 50vh;
     width: 100%;
+    object-fit: cover;
     @include large-up {
       width: 30%;
       height: 100vh;

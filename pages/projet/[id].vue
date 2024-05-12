@@ -149,6 +149,7 @@ console.log(projet);
   &__img {
     height: 55vh;
     width: 100%;
+    object-fit: cover;
     @include large-up {
       width: 50%;
       height: 50vh;

@@ -1,5 +1,5 @@
 <template>
-  <a class="boutons__lien" :href="lien">
+  <a class="boutons__lien" :href="lien" target="_blank">
     <div class="boutons">
       <p class="boutons__texte">{{ texte }}</p>
     </div>
